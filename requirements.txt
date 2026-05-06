@@ -44,3 +44,4 @@ python-dotenv
 pydantic
 jupyter
 ipykernel
+transformers
