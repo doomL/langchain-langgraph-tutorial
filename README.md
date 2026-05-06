@@ -14,6 +14,7 @@
   <img
     src="https://console.groq.com/powered-by-groq-dark.svg"
     alt="Powered by Groq for fast inference."
+    width="180"
   />
 </a>
 
@@ -196,6 +197,7 @@ Both models are available on the **free Groq tier**. Switch to any other Groq mo
   <img
     src="https://console.groq.com/powered-by-groq-dark.svg"
     alt="Powered by Groq for fast inference."
+    width="180"
   />
 </a>
 
