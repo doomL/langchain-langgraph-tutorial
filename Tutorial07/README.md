@@ -1,81 +1,30 @@
 # Tutorial 7: Introduction to LangGraph
 
-Welcome to the seventh tutorial in our series. LangGraph is an extension of LangChain for building stateful, multi-step workflows.
+Welcome to Tutorial 7. Here we introduce LangGraph — the graph-based execution engine that powers all advanced multi-agent patterns covered in Tutorials 8–25.
 
 ## What you'll learn
 
 1. LangGraph fundamentals
-   - Graph-based workflows vs. LangChain chains
+   - What LangGraph is and how it differs from LangChain
    - Nodes, edges, and state management
-   - Graph compilation and execution
+   - Compiling and running a `StateGraph`
 
-2. Building workflows with LangGraph
-   - Creating nodes with custom functions
-   - Defining edges and transitions
-   - Managing conversation state
-   - Visualizing graph flows
+2. `add_messages` and `MessagesState`
+   - Why a plain `list` field breaks under concurrent updates
+   - The `add_messages` reducer — appending without overwriting
+   - Defining your own `ChatState(TypedDict)` with `Annotated`
+
+3. `ToolNode` — prebuilt tool execution
+   - How `ToolNode` reads `AIMessage.tool_calls` and returns `ToolMessage` results
+   - Parallel tool calls in a single model turn
+   - Direct tool invocation with the `@tool` decorator
+
+4. Building a ReAct agent from scratch
+   - The classic loop: `agent → should_use_tools → tools → agent`
+   - `add_conditional_edges` with an explicit `path_map`
+   - How `create_react_agent` implements this internally
 
 ## Prerequisites
 
-- Completion of Tutorials 1-6
-- Python 3.7+
-- Groq API key (https://console.groq.com)
-
-## Getting Started
-
-### 1. Ensure Virtual Environment is Activated
-
-#### Linux/macOS:
-```bash
-cd langchain-langgraph-tutorial
-source venv/bin/activate
-cd Tutorial07
-```
-
-#### Windows:
-```cmd
-cd langchain-langgraph-tutorial
-.\venv\Scripts\activate
-cd Tutorial07
-```
-
-### 2. Launch Jupyter Notebook
-```bash
-jupyter notebook Tutorial_7_introduction_to_langgraph.ipynb
-```
-
-## What's Included
-
-### Core Components
-- Tutorial notebook with practical examples
-- Sample conversation workflow implementation
-- Graph visualization tools
-- State management examples
-
-### Key Concepts Covered
-
-#### Graph Structure
-- Node creation and configuration
-- Edge definition and flow control
-- State typing with TypedDict
-- Graph compilation process
-
-#### Practical Implementation
-- Conversational agent workflow
-- State management in conversations
-- Interactive user input handling
-- Graph visualization with Mermaid
-
-## Next Steps
-
-After completing this tutorial:
-1. Experiment with complex graph structures
-2. Add conditional branching
-3. Implement custom node types
-4. Build multi-agent systems
-
-Stay tuned for Tutorial 8 where we'll explore advanced LangGraph patterns.
-
-## Additional Resources
-- [LangGraph Documentation](https://python.langchain.com/docs/langgraph)
-- [Groq API Documentation](https://www.groq.com/docs/)
+- Completion of Tutorials 1–6
+- Groq API key — see [root README](../README.md) for setup instructions

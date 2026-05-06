@@ -1,124 +1,68 @@
 # Tutorial 1: Introduction to LangChain
 
-Welcome to the first tutorial in our LangChain and LangGraph series! In this tutorial, we'll introduce you to LangChain, a powerful framework for building applications with large language models (LLMs).
+Welcome to Tutorial 1 — the starting point of this series. We introduce LangChain, set up the environment, and build your first LLM-powered application.
 
 ## What you'll learn
 
-1. What is LangChain and why it's useful
-2. How to install and set up LangChain
-3. Basic concepts: Chains, Agents, and Memory
-4. Building your first LangChain application
+1. What LangChain is and why it exists
+2. How to set up the environment and obtain a Groq API key
+3. Core concepts: chains, prompts, and output parsers
+4. Your first LangChain application with LCEL
 
 ## Prerequisites
 
-- Basic understanding of Python (3.8 or higher)
-- Familiarity with Jupyter Notebooks
-- Git installed on your system
-- A Groq API key (sign up at https://console.groq.com)
+- Python 3.10 or higher
+- Basic Python knowledge
+- A free Groq API key — sign up at **[console.groq.com](https://console.groq.com)**
 
 ## Getting Started
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/doomL/langchain-langgraph-tutorial
+git clone https://github.com/DoomL/langchain-langgraph-tutorial.git
 cd langchain-langgraph-tutorial
 ```
 
-### 2. Create and Activate Virtual Environment
-
-#### For Linux/macOS:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-cd Tutorial01
-```
-
-#### For Windows:
-```cmd
-python -m venv venv
-.\venv\Scripts\activate
-cd Tutorial01
-```
-
-### 3. Install Required Packages
+### 2. Create and activate a virtual environment
 
 ```bash
-pip install -r ../requirements.txt
+# Linux / macOS
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Windows
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-### 4. Set Up API Keys
+### 3. Install dependencies
 
-#### For Linux/macOS:
 ```bash
-export GROQ_API_KEY='your-api-key-here'
-cp ../.env.example ../.env
+pip install -r requirements.txt
 ```
 
-#### For Windows:
-```cmd
-set GROQ_API_KEY=your-api-key-here
-copy ..\.env.example ..\.env
-```
+### 4. Configure your API key
 
-Edit the `.env` file and update these values:
+Create a `.env` file in the repo root:
+
 ```plaintext
-GROQ_API_KEY=your-api-key-here
-LANGSMITH_API_KEY=your-langsmith-key-here  # Optional for tracking LLM calls
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
-### 5. Launch Jupyter Notebook
+> **Get your key**: go to [console.groq.com](https://console.groq.com) → *API Keys* → *Create API Key*.
+
+### 5. Open the notebook
 
 ```bash
+cd Tutorial01
 jupyter notebook Tutorial_1_Introduction_to_LangChain.ipynb
 ```
 
-### 6. Follow the Tutorial
-
-The notebook will guide you through:
-- Setting up your first LangChain environment
-- Understanding core LangChain concepts
-- Creating a simple chat application
-- Working with different LLM providers
-- Implementing basic memory systems
-
 ## Troubleshooting
 
-### Common Issues
-
-1. **Virtual Environment Not Activating**
-   - Windows: Ensure PowerShell execution policy allows script execution
-   - Linux/macOS: Check Python3 installation and permissions
-
-2. **Package Installation Errors**
-   - Upgrade pip: `python -m pip install --upgrade pip`
-   - Install wheel: `pip install wheel`
-   - For Windows: Install Visual C++ Build Tools if required
-
-3. **API Key Issues**
-   - Verify key format in .env file
-   - Restart Jupyter kernel after setting environment variables
-   - Check for spaces or quotes in the API key string
-
-## Next Steps
-
-After completing this tutorial:
-1. Explore the advanced concepts in Tutorial 2
-2. Practice building simple chains and agents
-3. Review the LangChain documentation for additional features
-4. Join the LangChain Discord community for support
-
-Stay tuned for Tutorial 2 where we'll dive deeper into:
-- Advanced LangChain patterns
-- Custom chain development
-- Integration with vector databases
-- Practical use cases and deployment strategies
-
-## Additional Resources
-
-- Official LangChain Documentation
-- Groq API Documentation
-- LangSmith Documentation (for monitoring)
-- Community Forums and Support Channels
-
-Happy learning!
+| Problem | Fix |
+|---|---|
+| `ModuleNotFoundError` | Make sure the venv is active and `pip install -r requirements.txt` was run |
+| `GROQ_API_KEY not set` | Add the key to `.env` and restart the Jupyter kernel |
+| Pip install fails | Upgrade pip: `python -m pip install --upgrade pip` |

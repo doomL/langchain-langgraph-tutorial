@@ -1,20 +1,46 @@
-langchain-groq
+# ── Core framework ────────────────────────────────────────────────────────────
 langchain
-python-dotenv
+langchain-core
+langchain-groq
 langchain-community
 langchain-ollama
-pypdf
+langchain-text-splitters
+langchain-experimental
+langchain-mcp-adapters
+
+# ── LangGraph ─────────────────────────────────────────────────────────────────
+langgraph
+langgraph-checkpoint-sqlite
+langgraph-supervisor
+langgraph-swarm
+deepagents
+
+# ── MCP ───────────────────────────────────────────────────────────────────────
+mcp
+
+# ── Embeddings & vector stores ────────────────────────────────────────────────
 faiss-cpu
 chromadb
-numexpr 
+
+# ── Document loading ──────────────────────────────────────────────────────────
+pypdf
+
+# ── Search & web tools ────────────────────────────────────────────────────────
 duckduckgo-search
-wikipedia
-playwright
-unstructured
-langgraph
-jupyter
-asyncio
-langchain_experimental
+ddgs
+
+# ── Data & visualisation ──────────────────────────────────────────────────────
 pandas
 matplotlib
 graphviz
+
+# ── Web framework & monitoring (Tutorial 13) ──────────────────────────────────
+fastapi
+uvicorn
+prometheus-client
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv
+pydantic
+jupyter
+ipykernel
