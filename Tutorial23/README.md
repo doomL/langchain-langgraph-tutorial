@@ -7,6 +7,7 @@ Welcome to Tutorial 23. LangChain v0.3 and the 1.0 release introduced a set of q
 1. Provider-agnostic model initialisation
    - `init_chat_model(model_id)` — initialise any supported model by string identifier
    - Switching providers without changing application code
+   - Optional OpenRouter call with `openrouter/free` when `OPENROUTER_API_KEY` is set
    - Configurable defaults for temperature, max tokens, etc.
 
 2. Message management utilities
@@ -15,7 +16,7 @@ Welcome to Tutorial 23. LangChain v0.3 and the 1.0 release introduced a set of q
    - `merge_message_runs()` — collapse consecutive same-role messages
 
 3. Dedicated integration packages
-   - Why `langchain-openai`, `langchain-anthropic`, `langchain-groq` replaced `langchain-community`
+   - Why `langchain-openai`, `langchain-anthropic`, `langchain-groq`, and `langchain-openrouter` replaced `langchain-community`
    - How to migrate existing imports
    - Version pinning strategy for integrations
 
@@ -28,6 +29,7 @@ Welcome to Tutorial 23. LangChain v0.3 and the 1.0 release introduced a set of q
 - Completion of Tutorials 1-22
 - Python 3.11+
 - Groq API key (https://console.groq.com)
+- Optional OpenRouter API key (https://openrouter.ai/keys) for the free-router cell
 
 ## Getting Started
 
@@ -49,7 +51,7 @@ cd Tutorial23
 
 ### 2. Install Dependencies
 ```bash
-pip install langchain langchain-groq langchain-openai
+pip install langchain langchain-groq langchain-openrouter langchain-openai
 ```
 
 ### 3. Launch Jupyter Notebook
@@ -62,6 +64,7 @@ jupyter notebook Tutorial_23_langchain_utilities.ipynb
 ### Core Components
 - Tutorial notebook with utility examples
 - `init_chat_model()` provider switching demo
+- Optional `openrouter/free` call, skipped when `OPENROUTER_API_KEY` is missing
 - Context-window-aware chatbot using `trim_messages()`
 - Message filtering and merging patterns
 - Structured output with multiple methods
@@ -70,6 +73,7 @@ jupyter notebook Tutorial_23_langchain_utilities.ipynb
 
 #### init_chat_model()
 - `init_chat_model("groq:llama-3.3-70b-versatile")` — provider:model format
+- `init_chat_model("openrouter:openrouter/free")` — optional free router. Each request can land on a different free model, so the rest of the notebook stays on Groq
 - Returns a standard `BaseChatModel` compatible with all LangChain components
 - Configurable at runtime without code changes
 
@@ -91,3 +95,5 @@ After completing this tutorial:
 - [LangChain trim_messages Docs](https://python.langchain.com/docs/how_to/trim_messages/)
 - [LangChain v0.3 Migration Guide](https://python.langchain.com/docs/versions/v0_3/)
 - [Groq API Documentation](https://console.groq.com/docs/openai)
+- [OpenRouter free router](https://openrouter.ai/openrouter/free)
+- [LangChain OpenRouter integration](https://docs.langchain.com/oss/python/integrations/chat/openrouter)
