@@ -16,7 +16,7 @@ Welcome to Tutorial 15. Here we build hierarchical multi-agent systems using the
 
 3. Multi-level hierarchies
    - Supervisor-of-supervisors pattern
-   - Combining with `create_react_agent` workers
+   - Combining with `create_agent` workers
    - State sharing between supervisor and workers
 
 ## Prerequisites

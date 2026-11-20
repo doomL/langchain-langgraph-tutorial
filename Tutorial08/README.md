@@ -23,7 +23,7 @@
 ## Prerequisites
 
 - Completion of Tutorials 1-7
-- Python 3.7+
+- Python 3.11+
 - Groq API key
 
 ## Getting Started

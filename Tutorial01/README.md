@@ -11,7 +11,7 @@ Welcome to Tutorial 1 — the starting point of this series. We introduce LangCh
 
 ## Prerequisites
 
-- Python 3.10 or higher
+- Python 3.11 or higher
 - Basic Python knowledge
 - A free Groq API key — sign up at **[console.groq.com](https://console.groq.com)**
 

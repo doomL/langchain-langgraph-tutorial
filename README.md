@@ -2,9 +2,9 @@
 
 # LangChain × LangGraph Tutorial Series
 
-**26 hands-on tutorials — from your first chain to production multi-agent systems**
+**28 hands-on tutorials — from your first chain to production multi-agent systems**
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![LangChain](https://img.shields.io/badge/LangChain-1.x-1C3C3C?style=flat&logo=langchain&logoColor=white)](https://python.langchain.com/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-1.x-FF6B35?style=flat)](https://langchain-ai.github.io/langgraph/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](LICENSE)
@@ -31,7 +31,7 @@ This series takes you from the very basics of LangChain all the way to cutting-e
 | **Foundations** | 01 – 06 | LangChain core, prompts, chains, agents, RAG, memory |
 | **LangGraph** | 07 – 13 | Graphs, complex flows, real-world apps, best practices |
 | **Advanced patterns** | 14 – 21 | HITL, Supervisor, Swarm, Subgraphs, Parallelism, Memory, Time Travel, Functional API |
-| **Cutting-edge** | 22 – 26 | Deep Agents, LangChain 1.0 utilities, Middleware, MCP & A2A, Streaming |
+| **Cutting-edge** | 22 – 28 | Deep Agents, utilities, middleware, MCP & A2A, streaming, fault tolerance, decisions |
 
 ---
 
@@ -94,7 +94,7 @@ jupyter notebook Tutorial01/Tutorial_1_Introduction_to_LangChain.ipynb
 | 01 | **Introduction to LangChain** | LCEL, chains, prompts, first app |
 | 02 | **Working with Language Models** | `ChatGroq`, `PromptTemplate`, output parsers |
 | 03 | **Document Processing** | Loaders, text splitting, FAISS, Corrective RAG (CRAG) |
-| 04 | **Agents in LangChain** | `create_react_agent`, tool calling, multi-tool agents |
+| 04 | **Agents in LangChain** | `create_agent`, tool calling, multi-tool agents |
 | 05 | **Advanced Agent Techniques** | Vector search tools, memory agents, research assistant |
 | 06 | **Memory Systems** | `MemorySaver`, `InMemoryStore`, `add_messages`, summary memory |
 
@@ -127,17 +127,19 @@ jupyter notebook Tutorial01/Tutorial_1_Introduction_to_LangChain.ipynb
 
 | # | Title | Key concepts |
 |---|---|---|
-| 22 | **Deep Agents** | `create_deep_agent()`, planning tool, sub-agents, filesystem |
+| 22 | **Deep Agents** | `create_deep_agent()`, opt-in `TodoListMiddleware`, filesystem, sub-agents |
 | 23 | **LangChain 1.0 Utilities** | `init_chat_model()`, `trim_messages()`, `filter_messages()` |
 | 24 | **Agent Middleware** | `AgentMiddleware`, `before_model`, `after_model`, `wrap_model_call`, `HumanInTheLoopMiddleware` |
-| 25 | **MCP & A2A Protocol** | `MultiServerMCPClient`, Agent Cards, cross-framework interoperability |
+| 25 | **MCP & A2A Protocol** | `MCPAdapter`, in-process FastMCP, Agent Cards |
 | 26 | **Streaming** | `stream_mode`, `version="v2"`, tokens, custom progress, subgraphs |
+| 27 | **Fault Tolerance** | retries, `timeout`, `error_handler`, `RunControl` drain |
+| 28 | **Decision Models** | `Noul`, `Choice`, `Score`, model routing, risky-tool blocking |
 
 ---
 
 ## Prerequisites
 
-- **Python 3.10+**
+- **Python 3.11+** — required by LangChain 1.5 and `langchain-core` 1.8
 - **Basic Python knowledge** — functions, classes, async/await
 - **Jupyter Notebooks** — how to open and run cells
 - **A Groq API key** — free at [console.groq.com](https://console.groq.com)
@@ -161,9 +163,15 @@ langchain-langgraph-tutorial/
 ├── Tutorial25/
 │   ├── README.md
 │   └── Tutorial_25_mcp_a2a_protocol.ipynb
-└── Tutorial26/
+├── Tutorial26/
+│   ├── README.md
+│   └── Tutorial_26_streaming.ipynb
+├── Tutorial27/
+│   ├── README.md
+│   └── Tutorial_27_fault_tolerance.ipynb
+└── Tutorial28/
     ├── README.md
-    └── Tutorial_26_streaming.ipynb
+    └── Tutorial_28_decision_models.ipynb
 ```
 
 ---
@@ -176,6 +184,7 @@ The series uses **[Groq](https://groq.com)** for fast LLM inference:
 |---|---|
 | 01 – 13, 15 – 21, 23 – 25 | `llama-3.1-8b-instant` |
 | 26 (optional live cell) | `llama-3.1-8b-instant` — the rest of the notebook runs offline |
+| 27 – 28 | No model call. Tutorial 28 uses a local decision model |
 | 04 (agents), 05 (research) | `qwen/qwen3-32b` |
 | 22 (deep agents) | `qwen/qwen3-32b` |
 

@@ -11,7 +11,8 @@ Welcome to Tutorial 22. Deep Agents is the official LangChain abstraction for bu
 
 2. Using `create_deep_agent()`
    - Minimal setup and provider-agnostic model configuration
-   - Built-in tools: `write_todos`, `read_file`, `write_file`, `edit_file`, `task`
+   - Built-in tools: `ls`, `read_file`, `write_file`, `edit_file`, `delete`, `glob`, `grep`, `execute`, `task`
+   - `write_todos` is opt-in: pass `middleware=[TodoListMiddleware()]`
    - Adding custom tools on top of the defaults
 
 3. Sub-agent patterns
@@ -75,10 +76,11 @@ jupyter notebook Tutorial_22_deep_agents.ipynb
 #### Built-in Tools
 | Tool | Purpose |
 |---|---|
-| `write_todos` | Planning — break tasks into tracked steps |
-| `read_file` / `write_file` / `edit_file` | Filesystem operations for memory and output |
+| `ls`, `glob`, `grep` | Find files in the agent filesystem |
+| `read_file` / `write_file` / `edit_file` / `delete` | Read, replace, edit, and delete files |
+| `execute` | Run a command when the backend is a sandbox |
 | `task` | Spawn a synchronous child agent |
-| `start_async_task` | Spawn a non-blocking child agent (v0.5+) |
+| `write_todos` | Planning. Add `TodoListMiddleware` to enable it |
 
 ## Next Steps
 

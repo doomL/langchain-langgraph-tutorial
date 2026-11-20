@@ -1,12 +1,12 @@
+# Python 3.11 or newer. langchain 1.5 and langchain-core 1.8 dropped 3.10.
 # ── Core framework ────────────────────────────────────────────────────────────
-langchain
+langchain[mcp]
 langchain-core
 langchain-groq
 langchain-community
 langchain-ollama
 langchain-text-splitters
 langchain-experimental
-langchain-mcp-adapters
 
 # ── LangGraph ─────────────────────────────────────────────────────────────────
 langgraph
@@ -16,6 +16,8 @@ langgraph-swarm
 deepagents
 
 # ── MCP ───────────────────────────────────────────────────────────────────────
+# FastMCP is installed by the langchain[mcp] extra. The mcp package remains
+# for servers built directly against the protocol.
 mcp
 
 # ── Embeddings & vector stores ────────────────────────────────────────────────

@@ -7,7 +7,7 @@ Welcome to Tutorial 25. This tutorial covers two open standards that define how 
 1. Model Context Protocol (MCP)
    - What MCP is and why it standardises tool interfaces
    - Running a local MCP server (stdio and SSE transports)
-   - Connecting a LangGraph agent to MCP tools
+   - Connecting a LangGraph agent to MCP tools with `MCPAdapter`
    - MCP as the "REST API for tools"
 
 2. Agent-to-Agent (A2A) Protocol
@@ -47,7 +47,7 @@ cd Tutorial25
 
 ### 2. Install Dependencies
 ```bash
-pip install langgraph langchain-groq mcp langchain-mcp-adapters
+pip install "langchain[mcp]" langgraph langchain-groq
 ```
 
 ### 3. Launch Jupyter Notebook
@@ -69,7 +69,7 @@ jupyter notebook Tutorial_25_mcp_a2a_protocol.ipynb
 #### MCP (Model Context Protocol)
 - Developed by Anthropic, now an open standard
 - Transport options: `stdio` (local process), `SSE` (HTTP server)
-- `MultiServerMCPClient` from `langchain-mcp-adapters`
+- `MCPAdapter` from `langchain.mcp` (beta; replaces `MultiServerMCPClient`)
 - Tool discovery and invocation through a standard interface
 
 #### A2A (Agent-to-Agent Protocol)
