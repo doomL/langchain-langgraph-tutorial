@@ -3,6 +3,7 @@
 langchain[mcp]
 langchain-core
 langchain-groq
+langchain-openrouter
 langchain-community
 langchain-ollama
 langchain-text-splitters

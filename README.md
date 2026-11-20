@@ -63,6 +63,8 @@ Python **3.11+** is required. LangChain 1.5 and `langchain-core` 1.8 dropped 3.1
 
 Cells that call Groq still need `GROQ_API_KEY`. Tutorials 22 and 25 skip those cells when the key is missing. Tutorials 26, 27, and 28 run without one.
 
+Tutorial 23 can also call OpenRouter. Set `OPENROUTER_API_KEY` and that notebook builds `init_chat_model("openrouter:openrouter/free")`. The slug is a free router: each request goes to one of the free models that support the features you asked for. The model can change between calls, so the rest of the series stays on a fixed Groq id. The cell skips the call when the key is missing, because the OpenRouter client reads the key while it is being built.
+
 ---
 
 ## Quick Start
@@ -75,6 +77,8 @@ Groq provides **free, blazing-fast LLM inference** used throughout this series.
 2. Sign up (or log in) — no credit card required for the free tier
 3. Navigate to **API Keys** → **Create API Key**
 4. Copy the key — you'll use it in step 4 below
+
+OpenRouter is optional. Tutorial 23 uses it in one cell. Create a key at [openrouter.ai/keys](https://openrouter.ai/keys) when you want that cell to call the free router `openrouter/free`.
 
 ### 2. Clone and set up
 
@@ -100,6 +104,9 @@ Create a `.env` file in the repo root:
 
 ```plaintext
 GROQ_API_KEY=your_groq_api_key_here
+
+# Optional — Tutorial 23 can call OpenRouter's free model router
+OPENROUTER_API_KEY=your_openrouter_api_key_here
 
 # Optional — enables LangSmith tracing
 LANGCHAIN_TRACING_V2=false
@@ -158,7 +165,7 @@ jupyter notebook Tutorial01/Tutorial_1_Introduction_to_LangChain.ipynb
 | # | Title | Key concepts |
 |---|---|---|
 | 22 | **Deep Agents** | `create_deep_agent()`, opt-in `TodoListMiddleware`, filesystem, sub-agents |
-| 23 | **LangChain 1.0 Utilities** | `init_chat_model()`, `trim_messages()`, `filter_messages()` |
+| 23 | **LangChain 1.0 Utilities** | `init_chat_model()`, optional `openrouter/free`, `trim_messages()`, `filter_messages()` |
 | 24 | **Agent Middleware** | `AgentMiddleware`, `before_model`, `after_model`, `wrap_model_call`, `HumanInTheLoopMiddleware` |
 | 25 | **MCP & A2A Protocol** | `MCPAdapter`, in-process FastMCP, Agent Cards |
 | 26 | **Streaming** | `stream_mode`, `version="v2"`, tokens, custom progress, subgraphs |
@@ -173,6 +180,7 @@ jupyter notebook Tutorial01/Tutorial_1_Introduction_to_LangChain.ipynb
 - **Basic Python knowledge** — functions, classes, async/await
 - **Jupyter Notebooks** — how to open and run cells
 - **A Groq API key** — free at [console.groq.com](https://console.groq.com)
+- **An OpenRouter API key** — optional, only for the free-router cell in Tutorial 23. Create one at [openrouter.ai/keys](https://openrouter.ai/keys)
 
 No prior LangChain experience required — Tutorial 1 starts from scratch.
 
@@ -220,12 +228,14 @@ The series uses **[Groq](https://groq.com)** for fast LLM inference:
 
 Both models are available on the **free Groq tier**. Switch to any other Groq model by changing the `model_name` in the setup cell of any notebook.
 
+Tutorial 23 has one optional cell for [OpenRouter's free router](https://openrouter.ai/openrouter/free), `openrouter/free`. It needs `OPENROUTER_API_KEY` and `langchain-openrouter`. The router picks a free model per request, so the other cells in that notebook, and the rest of the series, keep their Groq model. The free router is not offered through OpenRouter's EU in-region routing.
+
 ---
 
 ## Useful resources
 
 ### Official documentation
-- [LangChain docs](https://python.langchain.com/) · [LangGraph docs](https://langchain-ai.github.io/langgraph/) · [Groq docs](https://console.groq.com/docs)
+- [LangChain docs](https://python.langchain.com/) · [LangGraph docs](https://langchain-ai.github.io/langgraph/) · [Groq docs](https://console.groq.com/docs) · [OpenRouter free router](https://openrouter.ai/openrouter/free)
 
 ### Community & inspiration
 - [langchain-ai/langchain](https://github.com/langchain-ai/langchain) — LangChain source

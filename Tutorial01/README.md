@@ -48,6 +48,9 @@ Create a `.env` file in the repo root:
 
 ```plaintext
 GROQ_API_KEY=your_groq_api_key_here
+
+# Optional — only the OpenRouter cell in Tutorial 23 reads this
+OPENROUTER_API_KEY=your_openrouter_api_key_here
 ```
 
 > **Get your key**: go to [console.groq.com](https://console.groq.com) → *API Keys* → *Create API Key*.
