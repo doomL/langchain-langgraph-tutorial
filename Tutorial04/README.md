@@ -2,6 +2,8 @@
 
 Welcome to the fourth tutorial in our LangChain and LangGraph series! In this tutorial, we'll explore the concept of Agents in LangChain, which are autonomous entities capable of using tools and making decisions to accomplish tasks.
 
+> **November 2026.** `create_react_agent` is deprecated. The notebook uses `create_agent` from `langchain.agents`, and `system_prompt=` instead of `prompt=`. The old factory still imports, but it warns and is on the way out. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Understanding the agent architecture in LangChain

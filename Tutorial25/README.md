@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 25. This tutorial covers two open standards that define how modern AI agents interact with the world: the **Model Context Protocol (MCP)** for agent-to-tool communication, and the **Agent-to-Agent (A2A) Protocol** for cross-framework agent interoperability. Together they form the interoperability stack for production multi-agent systems.
 
+> **November 2026.** LangChain 1.4 replaced `MultiServerMCPClient` with `MCPAdapter` in `langchain.mcp` (still beta). The notebook talks to an in-process FastMCP server, so it runs without Node.js. A2A is served by the Agent Server (`langgraph dev` exposes `/a2a/{assistant_id}`). There is no `LangGraphServer` class in the `langgraph` package. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Model Context Protocol (MCP)

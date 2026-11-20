@@ -1,5 +1,7 @@
 # Tutorial 11: Working with Structured Data
 
+> **November 2026.** The movie agent uses `create_agent` from `langchain.agents`. `create_react_agent` is deprecated, so new code should not import it. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Pydantic Integration:

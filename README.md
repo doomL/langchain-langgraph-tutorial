@@ -35,6 +35,36 @@ This series takes you from the very basics of LangChain all the way to cutting-e
 
 ---
 
+## New version update (November 2026)
+
+Checked against **LangChain 1.5.2**, **LangGraph 1.2.24**, and **Deep Agents 0.7.41**.
+
+The libraries moved. A notebook that still imported the old names would warn on import, or teach a call that no longer matches the docs. This update follows those moves. It also adds the three topics the series stopped short of: showing a run while it happens, keeping a thread alive when a node fails, and letting a decision model pick the chat model or refuse a tool.
+
+Python **3.11+** is required. LangChain 1.5 and `langchain-core` 1.8 dropped 3.10.
+
+### What moved
+
+| Before | Now | Why |
+|---|---|---|
+| `create_react_agent` from `langgraph.prebuilt` | `create_agent` from `langchain.agents` | Deprecated since LangGraph 1.0. The supported factory is the LangChain 1.0 agent, and its prompt argument is `system_prompt`. `create_supervisor` still takes `prompt=`. Tutorials 4, 5, 11, 15, and 16. |
+| `langchain-mcp-adapters` and `MultiServerMCPClient` | `langchain[mcp]` and `MCPAdapter` | LangChain 1.4 ships MCP inside `langchain.mcp`, on top of FastMCP. Tutorial 25 connects an in-process server, so the example runs without Node.js. The namespace is still beta. |
+| `from langgraph.server import LangGraphServer` | `langgraph dev`, then `/a2a/{assistant_id}` | That class is not in the `langgraph` package. The Agent Server publishes the A2A card for each assistant. |
+| `write_todos` on every deep agent | `middleware=[TodoListMiddleware()]` | Deep Agents 0.7 leaves planning off by default so a normal turn sends fewer tokens. The default tools are the filesystem, `execute`, and `task`. Tutorial 22. |
+| `MemorySaver` | Same class, also named `InMemorySaver` | The old name still works. Tutorial 27 uses the current name. Older tutorials keep `MemorySaver`. |
+
+### What was added
+
+| Tutorial | Why it is here |
+|---|---|
+| **26 — Streaming** | `invoke()` returns one final state. A chat UI needs tokens, tool progress, and subgraph events while the run is going. `version="v2"` makes every chunk the same shape. |
+| **27 — Fault tolerance** | LangGraph 1.2 can retry a node, cap one async attempt, compensate after the retries are gone, and stop between steps with `RunControl` without dropping the checkpoint. |
+| **28 — Decision models** | LangChain 1.5 answers a typed question (`Noul`, `Choice`, `Score`) instead of a paragraph. `ModelRouterMiddleware` picks the model for a run. `AutoModeMiddleware` blocks a risky tool. The notebook uses a local classifier, so it does not need a TypeSafe key. |
+
+Cells that call Groq still need `GROQ_API_KEY`. Tutorials 22 and 25 skip those cells when the key is missing. Tutorials 26, 27, and 28 run without one.
+
+---
+
 ## Quick Start
 
 ### 1. Get a Groq API key

@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 22. Deep Agents is the official LangChain abstraction for building agents that go beyond simple tool-calling loops. Announced in July 2025, the `deepagents` package provides the pattern seen in products like Deep Research, Manus, and Claude Code — combining detailed system prompts, a planning tool, sub-agent spawning, and filesystem access.
 
+> **November 2026 — deepagents 0.7.** Planning is no longer on by default. `write_todos` returns only if you pass `middleware=[TodoListMiddleware()]`. A default agent gets the filesystem tools, `execute`, and `task`. The smaller default prompt is why a normal turn uses fewer input tokens. Pass a model explicitly. The old implicit default model is deprecated. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Deep Agent architecture

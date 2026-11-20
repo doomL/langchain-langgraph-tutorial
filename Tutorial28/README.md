@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 28. LangChain 1.5 adds decision models for typed answers: a probability (`Noul`), a label (`Choice`), a rubric score (`Score`), or a region of an image (`Box`). Model routing and risky-tool blocking are middleware that call a decision model.
 
+> **Added in the November 2026 update.** LangChain 1.5 added the Decisions API and the beta middleware that uses it. The notebook implements a local classifier so the routing and the block are visible without a TypeSafe API key. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. The Decisions API

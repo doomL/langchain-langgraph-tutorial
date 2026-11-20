@@ -2,6 +2,8 @@
 
 Welcome to the fifth tutorial in our LangChain and LangGraph series! In this tutorial, we'll explore advanced techniques for working with Agents in LangChain, focusing on building an AI-powered research assistant.
 
+> **November 2026.** The agents in this notebook are built with `create_agent`. `create_react_agent` still imports and warns. The prompt argument is now `system_prompt`. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Building specialized agents for scientific literature analysis

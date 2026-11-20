@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 27. LangGraph 1.2 can retry a node, cap how long one attempt runs, compensate after the retries are gone, and stop a run between steps without losing its checkpoint.
 
+> **Added in the November 2026 update.** Timeouts, error handlers, and `RunControl` landed in LangGraph 1.2. A failed payment or a process restart should resume the thread instead of starting over. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Retry policies

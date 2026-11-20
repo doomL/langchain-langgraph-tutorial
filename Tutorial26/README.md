@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 26. The earlier tutorials return one final state from `invoke()`. A chat UI needs the run while it is happening: tokens, tool progress, and a way to keep internal model calls off the screen. This tutorial streams one support-desk graph with LangGraph's `version="v2"` stream format.
 
+> **Added in the November 2026 update.** Streaming was the gap between a notebook that prints a final answer and a UI that can show the run. `version="v2"` (LangGraph 1.1+) keeps one chunk shape when you combine modes. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Stream modes
