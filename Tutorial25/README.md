@@ -80,10 +80,10 @@ jupyter notebook Tutorial_25_mcp_a2a_protocol.ipynb
 
 ## Next Steps
 
-After completing this tutorial, you have completed the full tutorial series. Consider:
-1. Building a production multi-agent system combining all patterns
-2. Deploying agents with open-source LangGraph Server
-3. Contributing examples back to the community
+After completing this tutorial:
+1. Stream tokens and tool progress to a UI (Tutorial 26)
+2. Build a production multi-agent system combining all patterns
+3. Deploy agents with open-source LangGraph Server
 
 ## Additional Resources
 - [MCP Official Documentation](https://modelcontextprotocol.io/)

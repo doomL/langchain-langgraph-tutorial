@@ -2,7 +2,7 @@
 
 # LangChain × LangGraph Tutorial Series
 
-**25 hands-on tutorials — from your first chain to production multi-agent systems**
+**26 hands-on tutorials — from your first chain to production multi-agent systems**
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![LangChain](https://img.shields.io/badge/LangChain-1.x-1C3C3C?style=flat&logo=langchain&logoColor=white)](https://python.langchain.com/)
@@ -31,7 +31,7 @@ This series takes you from the very basics of LangChain all the way to cutting-e
 | **Foundations** | 01 – 06 | LangChain core, prompts, chains, agents, RAG, memory |
 | **LangGraph** | 07 – 13 | Graphs, complex flows, real-world apps, best practices |
 | **Advanced patterns** | 14 – 21 | HITL, Supervisor, Swarm, Subgraphs, Parallelism, Memory, Time Travel, Functional API |
-| **Cutting-edge** | 22 – 25 | Deep Agents, LangChain 1.0 utilities, Middleware, MCP & A2A |
+| **Cutting-edge** | 22 – 26 | Deep Agents, LangChain 1.0 utilities, Middleware, MCP & A2A, Streaming |
 
 ---
 
@@ -131,6 +131,7 @@ jupyter notebook Tutorial01/Tutorial_1_Introduction_to_LangChain.ipynb
 | 23 | **LangChain 1.0 Utilities** | `init_chat_model()`, `trim_messages()`, `filter_messages()` |
 | 24 | **Agent Middleware** | `AgentMiddleware`, `before_model`, `after_model`, `wrap_model_call`, `HumanInTheLoopMiddleware` |
 | 25 | **MCP & A2A Protocol** | `MultiServerMCPClient`, Agent Cards, cross-framework interoperability |
+| 26 | **Streaming** | `stream_mode`, `version="v2"`, tokens, custom progress, subgraphs |
 
 ---
 
@@ -157,20 +158,24 @@ langchain-langgraph-tutorial/
 │   └── Tutorial_1_Introduction_to_LangChain.ipynb
 ├── Tutorial02/ …
 │   ⋮
-└── Tutorial25/
+├── Tutorial25/
+│   ├── README.md
+│   └── Tutorial_25_mcp_a2a_protocol.ipynb
+└── Tutorial26/
     ├── README.md
-    └── Tutorial_25_mcp_a2a_protocol.ipynb
+    └── Tutorial_26_streaming.ipynb
 ```
 
 ---
 
 ## Models used
 
-All tutorials use **[Groq](https://groq.com)** for fast LLM inference:
+The series uses **[Groq](https://groq.com)** for fast LLM inference:
 
 | Tutorial | Model |
 |---|---|
 | 01 – 13, 15 – 21, 23 – 25 | `llama-3.1-8b-instant` |
+| 26 (optional live cell) | `llama-3.1-8b-instant` — the rest of the notebook runs offline |
 | 04 (agents), 05 (research) | `qwen/qwen3-32b` |
 | 22 (deep agents) | `qwen/qwen3-32b` |
 
