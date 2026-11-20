@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 22. Deep Agents is the official LangChain abstraction for building agents that go beyond simple tool-calling loops. Announced in July 2025, the `deepagents` package provides the pattern seen in products like Deep Research, Manus, and Claude Code — combining detailed system prompts, a planning tool, sub-agent spawning, and filesystem access.
 
+> **November 2026 — deepagents 0.7.** Planning is no longer on by default. `write_todos` returns only if you pass `middleware=[TodoListMiddleware()]`. A default agent gets the filesystem tools, `execute`, and `task`. The smaller default prompt is why a normal turn uses fewer input tokens. Pass a model explicitly. The old implicit default model is deprecated. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Deep Agent architecture
@@ -11,7 +13,8 @@ Welcome to Tutorial 22. Deep Agents is the official LangChain abstraction for bu
 
 2. Using `create_deep_agent()`
    - Minimal setup and provider-agnostic model configuration
-   - Built-in tools: `write_todos`, `read_file`, `write_file`, `edit_file`, `task`
+   - Built-in tools: `ls`, `read_file`, `write_file`, `edit_file`, `delete`, `glob`, `grep`, `execute`, `task`
+   - `write_todos` is opt-in: pass `middleware=[TodoListMiddleware()]`
    - Adding custom tools on top of the defaults
 
 3. Sub-agent patterns
@@ -75,10 +78,11 @@ jupyter notebook Tutorial_22_deep_agents.ipynb
 #### Built-in Tools
 | Tool | Purpose |
 |---|---|
-| `write_todos` | Planning — break tasks into tracked steps |
-| `read_file` / `write_file` / `edit_file` | Filesystem operations for memory and output |
+| `ls`, `glob`, `grep` | Find files in the agent filesystem |
+| `read_file` / `write_file` / `edit_file` / `delete` | Read, replace, edit, and delete files |
+| `execute` | Run a command when the backend is a sandbox |
 | `task` | Spawn a synchronous child agent |
-| `start_async_task` | Spawn a non-blocking child agent (v0.5+) |
+| `write_todos` | Planning. Add `TodoListMiddleware` to enable it |
 
 ## Next Steps
 

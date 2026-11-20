@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 15. Here we build hierarchical multi-agent systems using the official `langgraph-supervisor` package. A Supervisor is a central LLM that coordinates a team of specialised worker agents, delegating tasks and aggregating results.
 
+> **November 2026.** Workers are `create_agent(...)` graphs. `create_supervisor` still takes `prompt=`, which is a different argument from the worker's `system_prompt`. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Supervisor pattern fundamentals
@@ -16,7 +18,7 @@ Welcome to Tutorial 15. Here we build hierarchical multi-agent systems using the
 
 3. Multi-level hierarchies
    - Supervisor-of-supervisors pattern
-   - Combining with `create_react_agent` workers
+   - Combining with `create_agent` workers
    - State sharing between supervisor and workers
 
 ## Prerequisites

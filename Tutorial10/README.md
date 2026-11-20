@@ -6,7 +6,7 @@ This tutorial applies the concepts learned in previous sessions to build practic
 ## Prerequisites
 - Completion of Tutorials 1-9 in the series
 - Strong understanding of LangChain components and LangGraph concepts
-- Python 3.7+
+- Python 3.11+
 - LangChain and LangGraph libraries installed
 - Groq API key (for using Groq as the LLM)
 

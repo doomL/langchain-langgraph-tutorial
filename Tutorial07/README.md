@@ -22,7 +22,7 @@ Welcome to Tutorial 7. Here we introduce LangGraph — the graph-based execution
 4. Building a ReAct agent from scratch
    - The classic loop: `agent → should_use_tools → tools → agent`
    - `add_conditional_edges` with an explicit `path_map`
-   - How `create_react_agent` implements this internally
+   - How `create_agent` implements this internally
 
 ## Prerequisites
 

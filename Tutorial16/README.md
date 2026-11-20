@@ -2,6 +2,8 @@
 
 Welcome to Tutorial 16. We explore the Swarm pattern — a decentralised multi-agent architecture where agents hand off control directly to each other without a central coordinator, using the official `langgraph-swarm` package.
 
+> **November 2026.** Each peer is a `create_agent` graph. `create_react_agent` is deprecated. Handoff tools are unchanged. See the [root README](../README.md#new-version-update-november-2026).
+
 ## What you'll learn
 
 1. Swarm pattern fundamentals
